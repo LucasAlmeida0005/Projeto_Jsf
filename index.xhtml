@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Facelet Title</title>
+        <link rel="StyleSheet" type="text/css" href="#{facesContext.externalContext.requestContextPath}/css/newcss.css" media="screen"></link>
+    </h:head>
+    <h:body>
+        
+        
+        <f:view xmlns:f="http://xmlns.jcp.org/jsf/core">
+            <center>
+            <h:form>
+                
+                <legend>Dados</legend>
+                
+                <h:outputLabel styleClass="nomes y" value="Nome: "/>
+                <h:inputText value ="#{candidato.nome}" styleClass="campo"/> 
+                <br></br>
+                <h:outputLabel styleClass="nomes" value="sobrenome:"/>
+                <h:inputText styleClass="campo x"  value="#{candidato.sobrenome}"/>
+                <br></br>
+                <h:outputText styleClass="nomes" value="tipo sangíneo:"/>
+                <h:inputText styleClass="campo" value="#{candidato.tiposanguineo}"/>
+                <h:outputLabel styleClass="nomes y" value="Possui mais de 50kg?"/>
+                       
+                <h:selectOneRadio value="#{candidato.peso}">
+                    <f:selectItem itemValue="S" itemLabel="Sim"/>
+                    <f:selectItem itemValue="N" itemLabel="Nao"/>
+                </h:selectOneRadio>
+                       
+                <br></br>
+                <h:commandButton styleClass="botao" value="gravar" action="#{candidato.mensagem()}"/>
+                
+            </h:form>
+                    <h:outputText styleClass="txt" value="#{candidato.msg}"/>
+            </center>
+        </f:view>
+        
+    </h:body>
+</html>
+
